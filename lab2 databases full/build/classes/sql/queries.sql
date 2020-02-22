@@ -1,0 +1,9 @@
+-- selectAll
+SELECT * FROM PRODUCT;
+-- FindProductByID
+SELECT * FROM PRODUCT WHERE ID = ?;
+-- InsertNewProduct
+INSERT INTO  PRODUCT (ID, NAME, PRICE)
+VALUES ((SELECT MAX(ID) FROM PRODUCT) + 1,?,?);
+-- UpdateProductWithID
+UPDATE PRODUCT SET NAME = ?, PRICE = ? WHERE ID = ?;
